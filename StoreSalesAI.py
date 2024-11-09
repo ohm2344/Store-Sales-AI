@@ -57,3 +57,11 @@ def getOil(filename):
                     price = float(price)
                     Oil[date] = price
     return Oil
+
+def main():
+    Train = getTrainData("train.csv")
+    print(Train)
+    holiday = Holiday("holiday.csv")
+    print(holiday)
+    oil = getOil("oil.csv")
+    print(oil)

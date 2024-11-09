@@ -1,3 +1,4 @@
+
 import pandas as pd
 #TODO: Implement stringHash function
 def stringHash(string):
@@ -57,3 +58,18 @@ def getOil(filename):
                     price = float(price)
                     Oil[date] = price
     return Oil
+
+def process_inputs(train_file,holiday_file,oil_file):
+    Train = getTrainData(train_file)
+    holiday = Holiday(holiday_file)
+    oil_file = getOil(oil_file)
+    return Train,holiday,oil_file
+
+
+def main():
+    train, holiday, oil = process_inputs("data/train.csv","data/holidays_events.csv","data/oil.csv")
+    print(train)
+    print(holiday)
+    print(oil)
+
+main()

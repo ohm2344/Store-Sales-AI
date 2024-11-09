@@ -69,7 +69,7 @@ def process_inputs(train_file,holiday_file,oil_file):
 def main():
     train, holiday, oil = process_inputs("data/train.csv","data/holidays_events.csv","data/oil.csv")
     print(train)
-    print(holiday)
+    print(holiday) #WTF
     print(oil)
 
 main()

@@ -39,16 +39,21 @@ def Holiday(filename):
     return Holiday
 
 
-
-
-
-
-
-def main():
-    Train = getTrainData("data\\train.csv")
-    print(Train)
-    holiday = Holiday("data\\holidays_events.csv")
-    print(holiday)
-    print("hello")
-
-main()
+def getOil(filename):
+    Oil = {}
+    checker = True
+    with open(filename) as reader:
+        for line in reader:
+            line = line.strip().split(",")
+            if checker is True:
+                checker = False
+                continue
+            else:
+                date = line[0]
+                price = line[1]
+                if price == "":
+                    continue
+                else:
+                    price = float(price)
+                    Oil[date] = price
+    return Oil

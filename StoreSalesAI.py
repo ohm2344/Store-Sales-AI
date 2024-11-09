@@ -29,9 +29,14 @@ def Holiday(filename):
     Holiday = {}
     with open(filename) as reader:
         for line in reader:
-            if(line.split(",")[0] == "date"):
+            date = line.strip().split(",")[0]
+            if(date == "date"):
+                continue
+            elif(line.strip().split(",")[5]=="True"):
                 continue
             else:
+                Holiday[date] = True
+
 
 
 

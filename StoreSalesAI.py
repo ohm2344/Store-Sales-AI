@@ -36,8 +36,7 @@ def Holiday(filename):
                 continue
             else:
                 Holiday[date] = True
-
-
+    return Holiday
 
 
 
@@ -46,5 +45,9 @@ def Holiday(filename):
 
 
 def main():
-    Train = getTrainData("C:\\Users\\Eillo\\PycharmProjects\\Store-Sales-AI\\data\\train.csv")
+    Train = getTrainData("data\\train.csv")
     print(Train)
+    holiday = Holiday("data\\holidays_events.csv")
+    print(holiday)
+
+main()
